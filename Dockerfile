@@ -1,7 +1,7 @@
 # Image de base
 FROM python:3.10.7-slim-buster
 
-# Create /usr/src/app and cd into it
+# Create /app and cd into it
 WORKDIR /app
 
 # install dependencies
