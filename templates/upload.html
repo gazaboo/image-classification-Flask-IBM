@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Uploader</title>
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        h1,
+        .upload-form {
+            text-align: center;
+        }
+
+        .upload-form input[type="file"] {
+            display: none;
+        }
+
+        label,
+        button {
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        label:hover,
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .selected-file,
+        .submit-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Image Uploader</h1>
+
+    <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+        <input type="file" name="file" id="file-input" accept="image/*" />
+        <label for="file-input">Select Image</label>
+        <div class="selected-file">No file selected</div>
+        <div class="submit-button">
+            <button type="submit">Classify</button>
+        </div>
+    </form>
+
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const selectedFile = document.querySelector('.selected-file');
+
+        fileInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                selectedFile.textContent = file.name;
+            } else {
+                selectedFile.textContent = 'No file selected';
+            }
+        });
+    </script>
+</body>
+
+</html>

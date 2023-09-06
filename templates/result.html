@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Result</title>
+</head>
+
+<body>
+    <h1>Uploaded Image</h1>
+    <img src="{{ url_for('static', filename='images/' + filename) }}" alt="Uploaded Image">
+    <ul>
+        {% for item in result %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>
